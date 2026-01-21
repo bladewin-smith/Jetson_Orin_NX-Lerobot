@@ -913,7 +913,7 @@ class MotorsBus(abc.ABC):
         motor: str,
         *,
         normalize: bool = True,
-        num_retry: int = 0,
+        num_retry: int = 100,
     ) -> Value:
         """Read a register from a motor.
 
@@ -952,7 +952,7 @@ class MotorsBus(abc.ABC):
         length: int,
         motor_id: int,
         *,
-        num_retry: int = 0,
+        num_retry: int = 100,
         raise_on_error: bool = True,
         err_msg: str = "",
     ) -> tuple[int, int]:
@@ -1023,7 +1023,7 @@ class MotorsBus(abc.ABC):
         motor_id: int,
         value: int,
         *,
-        num_retry: int = 0,
+        num_retry: int = 100,
         raise_on_error: bool = True,
         err_msg: str = "",
     ) -> tuple[int, int]:
@@ -1050,7 +1050,7 @@ class MotorsBus(abc.ABC):
         motors: str | list[str] | None = None,
         *,
         normalize: bool = True,
-        num_retry: int = 0,
+        num_retry: int = 100,
     ) -> dict[str, Value]:
         """Read the same register from several motors at once.
 
@@ -1098,7 +1098,7 @@ class MotorsBus(abc.ABC):
         length: int,
         motor_ids: list[int],
         *,
-        num_retry: int = 0,
+        num_retry: int = 100,
         raise_on_error: bool = True,
         err_msg: str = "",
     ) -> tuple[dict[int, int], int]:
@@ -1145,7 +1145,7 @@ class MotorsBus(abc.ABC):
         values: Value | dict[str, Value],
         *,
         normalize: bool = True,
-        num_retry: int = 0,
+        num_retry: int = 100,
     ) -> None:
         """Write the same register on multiple motors.
 
@@ -1186,7 +1186,7 @@ class MotorsBus(abc.ABC):
         addr: int,
         length: int,
         ids_values: dict[int, int],
-        num_retry: int = 0,
+        num_retry: int = 100,
         raise_on_error: bool = True,
         err_msg: str = "",
     ) -> int:
