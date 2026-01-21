@@ -1,3 +1,5 @@
+This repository include the guidance of application of lerobot on jetson orin nx device
+
 sudo install -d -m 0755 /etc/apt/keyrings
 
 
